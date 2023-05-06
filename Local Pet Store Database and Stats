@@ -1,0 +1,28 @@
+--Create a local pet store database
+
+CREATE TABLE Pet_Supply_Store (id INTEGER PRIMARY KEY, Name TEXT, Price INTEGER, Quantity INTEGER, Reorder TEXT, Promotional_Item TEXT);
+
+INSERT INTO Pet_Supply_Store VALUES (1, "Kibble", 10.99, 26, "No", "No");
+INSERT INTO Pet_Supply_Store VALUES (2, "Canned_Dog_Food", 6.99, 34, "No", "No");
+INSERT INTO Pet_Supply_Store VALUES (3, "Canned_Cat_Food", 4.99, 48, "No", "No");
+INSERT INTO Pet_Supply_Store VALUES (4, "Food_Bowl", 4.99, 18, "Yes", "No");
+INSERT INTO Pet_Supply_Store VALUES (5, "Water_Bowl", 4.99, 12, "Yes", "No");
+INSERT INTO Pet_Supply_Store VALUES (6, "Leash", 9.99, 22, "Yes", "No");
+INSERT INTO Pet_Supply_Store VALUES (7, "Collar", 8.99, 16, "Yes","No");
+INSERT INTO Pet_Supply_Store VALUES (8, "Pet_First_Aid_Kit", 16.99, 12, "Yes", "Yes");
+INSERT INTO Pet_Supply_Store VALUES (9, "Identification_Tag", 10.99, 8, "Yes", "Yes"); 
+INSERT INTO Pet_Supply_Store VALUES (10, "Pet_Bed", 18.99, 15, "Yes", "No");
+INSERT INTO Pet_Supply_Store VALUES (11, "Crate", 19.99, 24, "No", "No");
+INSERT INTO Pet_Supply_Store VALUES (12, "Grooming_Kit", 15.99, 11, "Yes", "No");
+INSERT INTO Pet_Supply_Store VALUES (13, "Blanket", 12.99, 23, "No", "Yes");
+INSERT INTO Pet_Supply_Store VALUES (14, "Dog_Toy", 6.99, 28, "No", "No");
+INSERT INTO Pet_Supply_Store VALUES (15, "Cat_Scratcher", 12.99, 9, "Yes", "No");
+
+--Display database ordered by ascending price
+SELECT * FROM Pet_Supply_Store ORDER BY Price asc;
+
+--What is the total number of items in inventory?
+SELECT SUM(Quantity) FROM Pet_Supply_Store;
+
+--What items are being reordered?
+SELECT Name, Reorder FROM Pet_Supply_Store WHERE Reorder = "Yes";
